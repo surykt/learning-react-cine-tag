@@ -6,9 +6,7 @@ export default function Router() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/">
-          <Inicio />
-        </Route>
+        <Route path="/" element={<Inicio />}></Route>
       </Routes>
     </BrowserRouter>
   );

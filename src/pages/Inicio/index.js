@@ -16,7 +16,7 @@ export default function Inicio() {
         <h1>Um lugar para guardar seus vídeos e filmes!</h1>
       </Titulo>
       <section className={styles.container}>
-        {filmes.map(filme => <Card key={filme.id} titulo={filme.titulo} capa={filme.capa} link={filme.link} />)}
+        {filmes.map(filme => <Card {...filme} key={filme.id} />)}
       </section>
       <Rodape />
     </>

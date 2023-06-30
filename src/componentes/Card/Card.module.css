@@ -1,6 +1,6 @@
 .container {
   padding: 0 0 1em 0;
-  margin-top: .5em;
+  margin-top: 0.5em;
   width: 282px;
   background-color: var(--cinza);
   display: flex;
@@ -9,14 +9,20 @@
 }
 
 .capa {
-    width: 100%;
+  width: 100%;
 }
 
 .container h2,
 .favoritar {
-    padding: 0 1em;
+  padding: 0 1em;
 }
 
 .favoritar {
-    width: 25px;
+  width: 25px;
+}
+
+.link {
+  text-decoration: none;
+  text-align: left;
+  color: var(--preto);
 }

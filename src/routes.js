@@ -7,6 +7,7 @@ import Rodape from "componentes/Rodape";
 import Container from "componentes/Container";
 import FavoritosProvider from "contextos/Favoritos";
 import Player from "pages/Player";
+import NaoEncontrada from "pages/NaoEncontrada";
 
 export default function Router() {
   return (
@@ -18,6 +19,7 @@ export default function Router() {
             <Route path="/" element={<Inicio />} />
             <Route path="/favoritos" element={<Favoritos />} />
             <Route path="/:id" element={<Player />} />
+            <Route path="*" element={<NaoEncontrada />} />
           </Routes>
         </FavoritosProvider>
       </Container>

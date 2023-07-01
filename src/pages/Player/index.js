@@ -4,12 +4,17 @@ import Banner from "componentes/Banner";
 import Titulo from "componentes/Titulo";
 import { useParams } from "react-router-dom";
 import filmes from "json/db.json";
+import NaoEncontrada from "pages/NaoEncontrada";
 
 export default function Player() {
   const parametros = useParams();
   const filme = filmes.find((filme) => {
     return filme.id === Number(parametros.id);
   });
+
+  if(!filme) {
+    return <NaoEncontrada />
+  }
 
   return (
     <>

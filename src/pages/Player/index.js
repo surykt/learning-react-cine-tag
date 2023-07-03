@@ -1,16 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./Player.module.css";
 import Banner from "componentes/Banner";
 import Titulo from "componentes/Titulo";
 import { useParams } from "react-router-dom";
-import filmes from "json/db.json";
 import NaoEncontrada from "pages/NaoEncontrada";
 
 export default function Player() {
+  const [filme, setFilme] = useState()
   const parametros = useParams();
-  const filme = filmes.find((filme) => {
-    return filme.id === Number(parametros.id);
-  });
+
+  useEffect(() => {
+    fetch(`https://my-json-server.typicode.com/surykt/cinetag-api/filmes?id=${parametros.id}`)
+    .then(resposta => resposta.json())
+    .then(dados => {
+      setFilme(...dados)
+    })
+  },[parametros])
 
   if(!filme) {
     return <NaoEncontrada />

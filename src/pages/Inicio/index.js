@@ -1,11 +1,22 @@
 import Banner from "componentes/Banner";
 import Card from "componentes/Card";
 import Titulo from "componentes/Titulo";
-import filmes from "json/db.json"
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from './Inicio.module.css'
 
 export default function Inicio() {
+  const [filmes, setFilmes] = useState([])
+
+  useEffect(() => {
+    fetch('https://my-json-server.typicode.com/surykt/cinetag-api/filmes')
+    .then(resposta =>
+      resposta.json()
+    )
+    .then(dados => {
+      setFilmes(dados)
+    })
+  },[])
+
   return(
     <>
       <Banner imagem='home' />
